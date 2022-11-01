@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import javax.swing.JPanel;
 
@@ -18,6 +19,7 @@ public class PanelClase extends JPanel implements ActionListener {
     private boolean sonrie = true;
     JButton jbutton;
     JPanel panel;
+    JFrame frame;
 
     public PanelClase() {
         initPanel();
@@ -26,10 +28,19 @@ public class PanelClase extends JPanel implements ActionListener {
 
     void initPanel() {
         panel = new JPanel();
-        panel.setSize(800, 600);
-        panel.setVisible(true);
-        panel.setPreferredSize(new Dimension(800, 600));
-        add(panel);
+        frame= new JFrame();
+        jbutton=new JButton();
+        jbutton.addActionListener(this);
+        
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setSize(500,500);
+        frame.setLocationRelativeTo(null);
+        
+        
+        frame.getContentPane().add(panel);
+        frame.getContentPane().add(jbutton);
+        
     }
 
     /**
