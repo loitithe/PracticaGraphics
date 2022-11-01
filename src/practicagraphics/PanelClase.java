@@ -40,7 +40,14 @@ public class PanelClase extends JPanel implements ActionListener {
         
         frame.getContentPane().add(panel);
         frame.getContentPane().add(jbutton);
-        
+  
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        dibujoCara(g);
+        repaint();
     }
 
     /**
