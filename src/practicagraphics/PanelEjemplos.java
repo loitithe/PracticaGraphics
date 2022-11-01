@@ -7,23 +7,23 @@ package practicagraphics;
 import java.awt.*;
 import javax.swing.*;
 import static java.awt.Font.PLAIN;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
  *
  * @author rodri
  */
-public class Panel extends JFrame {
+public class PanelEjemplos extends JFrame{
 
     JPanel panel;
 
     /**
      *
      */
-    public Panel() {
+    public PanelEjemplos() {
         initPanel();
         initPantalla();
-
     }
 
     /**
@@ -33,52 +33,8 @@ public class Panel extends JFrame {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        // dibujoCara(g);
-        practicaBoton();
+        ejemplos(g);
         // Para poder modificar más propiedasdes con Graphics 2d
-    }
-
-    private boolean sonrie = true;
-    JButton jbutton;
-
-    void practicaBoton() {
-        jbutton = new JButton();
-       
-        jbutton.addActionListener((e) -> {
-            System.out.println("sonrie :" + sonrie);
-            sonrie = !sonrie;
-            repaint();
-        });
-         getContentPane().add(jbutton);
-    }
-
-    @Override
-    public void paintComponents(Graphics g) {
-        super.paintComponents(g); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
-        dibujoCara(g);
-        if (sonrie) {
-            g.drawArc(118, 125, 75, 30, 180, 180);
-        } else {
-            g.drawArc(118, 125, 75, 30, 180, -180);
-        }
-    }
-
-    /**
-     *
-     * @param g
-     */
-    public void dibujoCara(Graphics g) {
-        //Dibujo el contorno de la cara 
-        g.setColor(Color.BLACK);
-        g.fillOval(105, 70, 100, 100);
-//Dibujo de los ojos
-        g.setColor(Color.GREEN);
-        g.fillOval(125, 100, 10, 10);
-        g.fillOval(175, 100, 10, 10);
-//Dibujo de la nariz
-        g.drawLine(150, 100, 150, 130);
-//Dibujo de la boca
-        // g.drawArc(118, 120, 75, 30, 180, 180);
     }
 
     /**
@@ -163,5 +119,7 @@ public class Panel extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
     }
+
+   
 
 }

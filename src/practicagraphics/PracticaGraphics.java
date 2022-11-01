@@ -15,7 +15,9 @@ public class PracticaGraphics {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Panel p= new Panel();
+     //  PanelEjemplos p= new PanelEjemplos();
+        PanelClase pc= new PanelClase();
+      
         
      
     }
